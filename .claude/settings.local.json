@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test -f \"E:\\\\\\\\AI_Support\\\\\\\\AI_Project\\\\\\\\WindowsBleTool\\\\\\\\.superpowers\\\\\\\\brainstorm\\\\\\\\1338-1778496298\\\\\\\\state\\\\\\\\server-info\")",
+      "WebSearch",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\" --version; & \"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\" --list-sdks)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\dotnet\\\\sdk\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\Program Files\\\\dotnet\\\\sdk\"\\)\\) { Write-Host \"No SDK directory found\" })",
+      "PowerShell(winget search *)",
+      "PowerShell(winget install *)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://dot.net/v1/dotnet-install.ps1\" -OutFile \"$env:TEMP\\\\dotnet-install.ps1\" -UseBasicParsing 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\" --info 2>&1)",
+      "PowerShell(if \\(Test-Path \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\"\\) { Get-ChildItem \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\" -Directory | ForEach-Object { Write-Host $_.FullName } } else { Write-Host \"No VS 2022 found\" }; if \\(Test-Path \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2022\"\\) { Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2022\" -Directory } else { Write-Host \"No VS 2022 \\(x86\\) found\" })",
+      "PowerShell(Out-File *)",
+      "PowerShell(git init *)"
+    ]
+  }
+}
