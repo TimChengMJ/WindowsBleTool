@@ -1,4 +1,4 @@
-name: Build & Test
+name: Build & Release
 
 on:
   push:
@@ -31,6 +31,21 @@ jobs:
       - name: Run tests
         run: dotnet test tests/BleCore.Tests/BleCore.Tests.csproj --verbosity normal
 
-      # GUI build skipped: WinUI 3 XamlCompiler.exe crashes on windows-latest runner
-      # Same issue occurs locally on Windows 11 Insider build 10.0.26200
-      # Tracked at: WinAppSDK + .NET 9/10 XAML Markup Compiler incompatibility
+      - name: Publish CLI (win-x64)
+        run: dotnet publish src/BleTool.Cli/BleTool.Cli.csproj -c Release -r win-x64 -o publish/BleTool.Cli --self-contained true -p:PublishSingleFile=true
+
+      - name: Upload CLI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WindowsBleTool-CLI
+          path: publish/BleTool.Cli/BleTool.Cli.exe
+
+      - name: Create Release
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: nightly-${{ github.run_number }}
+          tag_name: nightly-${{ github.run_number }}
+          files: publish/BleTool.Cli/BleTool.Cli.exe
+          prerelease: true
+          generate_release_notes: true
