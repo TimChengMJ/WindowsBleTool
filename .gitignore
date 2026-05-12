@@ -11,5 +11,8 @@ obj/
 # Visual Studio
 .vs/
 
+# Publish output
+publish/
+
 # OS
 Thumbs.db

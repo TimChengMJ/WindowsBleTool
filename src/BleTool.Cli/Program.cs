@@ -147,6 +147,16 @@ rootCommand.Add(writeCmd);
 rootCommand.Add(subscribeCmd);
 rootCommand.Add(runCmd);
 
+// Handle double-click scenario: no args = show help + wait for keypress
+if (args.Length == 0)
+{
+    await rootCommand.InvokeAsync("--help");
+    Console.WriteLine();
+    Console.WriteLine("Press any key to exit...");
+    try { Console.ReadKey(); } catch (InvalidOperationException) { }
+    return 0;
+}
+
 return await rootCommand.InvokeAsync(args);
 
 static byte[] HexToBytes(string hex)
