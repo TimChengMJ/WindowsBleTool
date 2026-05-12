@@ -1,0 +1,5 @@
+<Page x:Class="BleTool.Gui.Views.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid><TextBlock Text="设置" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/></Grid>
+</Page>

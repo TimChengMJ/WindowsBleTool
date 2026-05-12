@@ -35,7 +35,30 @@
       "Bash(Get-ChildItem *)",
       "PowerShell(git *)",
       "PowerShell(dotnet build *)",
-      "PowerShell(dotnet test *)"
+      "PowerShell(dotnet test *)",
+      "PowerShell(ls \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\\" | Where-Object { $_.Name -match \"windowsapp\" } | % { $_.Name; ls $_.FullName | % { \"  \" + $_.Name } })",
+      "PowerShell(ls \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\\" | Where-Object { $_.Name -match \"winui\" } | % { $_.Name; ls $_.FullName | % { \"  \" + $_.Name } })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk.winui\\\\2.0.12\" -Recurse -Depth 3 | Where-Object { $_.Name -match \"XamlCompiler\" -or $_.Name -match \"tools\" } | Select-Object FullName)",
+      "PowerShell(ls -Recurse \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk.winui\" -Depth 5 -Force | % { $_.FullName })",
+      "PowerShell(dotnet restore \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\BleTool.Gui.csproj\" 2>&1; dotnet build \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\BleTool.Gui.csproj\" 2>&1)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Push-Location *)",
+      "PowerShell([System.Reflection.AssemblyName]::GetAssemblyName\\(\"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\system.security.permissions\\\\8.0.0\\\\lib\\\\net6.0\\\\System.Security.Permissions.dll\"\\) | Select-Object Name, Version, FullName)",
+      "PowerShell($an = [System.Reflection.AssemblyName]::GetAssemblyName\\(\"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\system.security.permissions\\\\8.0.0\\\\lib\\\\net6.0\\\\System.Security.Permissions.dll\"\\); \"Name: $\\($an.Name\\)\"; \"Version: $\\($an.Version\\)\"; \"FullName: $\\($an.FullName\\)\")",
+      "PowerShell(New-Item *)",
+      "PowerShell(dotnet workload list *)",
+      "PowerShell(dotnet workload install *)",
+      "PowerShell($asm = [System.Reflection.Assembly]::ReflectionOnlyLoadFrom\\(\"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net6.0\\\\Microsoft.UI.Xaml.Markup.Compiler.dll\"\\); $asm.GetReferencedAssemblies\\(\\) | Select-Object Name, Version | Sort-Object Name)",
+      "PowerShell($path = \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net6.0\\\\Microsoft.UI.Xaml.Markup.Compiler.dll\"; $asm = [System.Reflection.Assembly]::ReflectionOnlyLoadFrom\\($path\\); $refs = $asm.GetReferencedAssemblies\\(\\); Write-Host \"Total refs: $\\($refs.Length\\)\"; foreach \\($r in $refs\\) { Write-Host \"$\\($r.Name\\) $\\($r.Version\\)\" })",
+      "PowerShell($an = [System.Reflection.AssemblyName]::GetAssemblyName\\(\"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\system.security.permissions\\\\6.0.0\\\\lib\\\\net6.0\\\\System.Security.Permissions.dll\"\\); \"Name: $\\($an.Name\\)\"; \"Version: $\\($an.Version\\)\")",
+      "PowerShell(dotnet nuget list *)",
+      "PowerShell(dotnet package search *)",
+      "PowerShell(Get-ChildItem \"HKLM:\\\\SOFTWARE\\\\Microsoft\\\\NET Framework Setup\\\\NDP\\\\v4\\\\Full\\\\\" | Get-ItemProperty | Select-Object Release, Version, ProductName; [System.Environment]::Version)",
+      "PowerShell(Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Application]::StartupPath 2>&1; Write-Host \"Exit: $LASTEXITCODE\")",
+      "PowerShell(Get-WmiObject *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Write-Host \"OS Version: $\\([Environment]::OSVersion\\)\"; $manifest = Get-Content \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net472\\\\XamlCompiler.exe\" -Encoding Byte -TotalCount 0; Write-Host \"File exists: $\\(Test-Path \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net472\\\\XamlCompiler.exe\"\\)\")",
+      "PowerShell(Add-AppxPackage *)"
     ]
   }
 }
