@@ -12,7 +12,22 @@
       "PowerShell(& \"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\" --info 2>&1)",
       "PowerShell(if \\(Test-Path \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\"\\) { Get-ChildItem \"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\2022\" -Directory | ForEach-Object { Write-Host $_.FullName } } else { Write-Host \"No VS 2022 found\" }; if \\(Test-Path \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2022\"\\) { Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\\\\2022\" -Directory } else { Write-Host \"No VS 2022 \\(x86\\) found\" })",
       "PowerShell(Out-File *)",
-      "PowerShell(git init *)"
+      "PowerShell(git init *)",
+      "PowerShell(mkdir *)",
+      "PowerShell(dotnet new search *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell($xamlCompiler = \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.241114003\\\\tools\\\\net472\\\\XamlCompiler.exe\"; $inputJson = \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\win-x64\\\\input.json\"; $outputJson = \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\win-x64\\\\output.json\"; & $xamlCompiler $inputJson $outputJson 2>&1)",
+      "PowerShell(Get-ChildItem \"HKLM:\\\\SOFTWARE\\\\Microsoft\\\\NET Framework Setup\\\\NDP\\\\v4\\\\Full\" -ErrorAction SilentlyContinue | ForEach-Object { $_.GetValue\\(\"Release\"\\) }; Get-ChildItem \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.241114003\\\\tools\\\\net472\" -ErrorAction SilentlyContinue | Select-Object Name)",
+      "Bash(test -d \"E:\\\\\\\\AI_Support\\\\\\\\AI_Project\\\\\\\\WindowsBleTool\\\\\\\\docs\\\\\\\\superpowers\\\\\\\\specs\")",
+      "Bash(test -d \"E:\\\\\\\\AI_Support\\\\\\\\AI_Project\\\\\\\\WindowsBleTool\\\\\\\\docs\\\\\\\\superpowers\\\\\\\\plans\")",
+      "Bash(git init *)",
+      "Bash(dotnet --list-sdks)",
+      "Bash(dir E:AI_SupportAI_ProjectWindowsBleTool *)",
+      "Bash(dotnet *)",
+      "PowerShell(& \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.241114003\\\\tools\\\\net472\\\\XamlCompiler.exe\" \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\input.json\" \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\output.json\" 2>&1)",
+      "PowerShell(dotnet new install *)",
+      "PowerShell(dotnet add *)",
+      "Bash(git add *)"
     ]
   }
 }

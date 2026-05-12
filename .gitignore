@@ -1,7 +1,12 @@
+# .NET
 bin/
 obj/
 *.user
 *.suo
-.vs/
+*.cache
+
+# Superpowers
 .superpowers/
-*.DotSettings
+
+# OS
+Thumbs.db

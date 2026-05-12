@@ -1,17 +1,9 @@
-using BleCore;
-using BleTool.Shared.Logging;
 using Microsoft.UI.Xaml;
 
 namespace BleTool.Gui;
 
 public partial class App : Application
 {
-    public static BleScanner Scanner { get; } = new();
-    public static SessionLogger SessionLogger { get; } = new();
-    public static NotificationDataLogger NotificationLogger { get; } = new();
-
-    private Window? _window;
-
     public App()
     {
         this.InitializeComponent();
@@ -19,7 +11,9 @@ public partial class App : Application
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _window = new MainWindow();
-        _window.Activate();
+        m_window = new MainWindow();
+        m_window.Activate();
     }
+
+    private Window? m_window;
 }
