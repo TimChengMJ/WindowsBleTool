@@ -65,7 +65,10 @@
       "PowerShell(Start-Sleep -Seconds 10; $run = gh run list --limit 1 --json url,status | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.url\\)\")",
       "PowerShell(gh release list --limit 2 --json name,tagName,isPrerelease,url)",
       "PowerShell(gh release list --limit 2 --json name,tagName,isPrerelease,createdAt)",
-      "PowerShell(gh release view nightly-6 --json tagName,name,isPrerelease,assets,publishedAt)"
+      "PowerShell(gh release view nightly-6 --json tagName,name,isPrerelease,assets,publishedAt)",
+      "PowerShell(Start-Sleep -Seconds 10; $run = gh run list --limit 1 --json url,status,conclusion | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.url\\)\")",
+      "PowerShell(gh release list --limit 1 --json name,tagName,isPrerelease)",
+      "PowerShell(Set-Location \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\"; $proc = Start-Process -FilePath \".\\\\publish\\\\Gui\\\\BleTool.Gui.exe\" -PassThru -NoNewWindow; Start-Sleep -Seconds 3; if \\(!$proc.HasExited\\) { Write-Host \"GUI running!\"; $proc.Kill\\(\\) } else { Write-Host \"Exit code: $\\($proc.ExitCode\\)\"; Write-Host \"Starting without NoNewWindow:\"; & \".\\\\publish\\\\Gui\\\\BleTool.Gui.exe\" 2>&1 | Select-Object -First 5 })"
     ]
   }
 }

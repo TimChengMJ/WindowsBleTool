@@ -30,6 +30,9 @@ jobs:
       - name: Build CLI
         run: dotnet build src/BleTool.Cli/BleTool.Cli.csproj --no-restore -warnaserror
 
+      - name: Build GUI
+        run: dotnet build src/BleTool.Gui/BleTool.Gui.csproj --no-restore -warnaserror
+
       - name: Run BleCore unit tests
         run: dotnet test tests/BleCore.Tests/BleCore.Tests.csproj --verbosity normal
 
@@ -42,11 +45,20 @@ jobs:
       - name: Publish CLI (win-x64)
         run: dotnet publish src/BleTool.Cli/BleTool.Cli.csproj -c Release -r win-x64 -o publish/BleTool.Cli --self-contained true -p:PublishSingleFile=true
 
+      - name: Publish GUI (win-x64)
+        run: dotnet publish src/BleTool.Gui/BleTool.Gui.csproj -c Release -r win-x64 -o publish/BleTool.Gui --self-contained true
+
       - name: Upload CLI artifact
         uses: actions/upload-artifact@v4
         with:
           name: WindowsBleTool-CLI
           path: publish/BleTool.Cli/BleTool.Cli.exe
+
+      - name: Upload GUI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WindowsBleTool-GUI
+          path: publish/BleTool.Gui/
 
       - name: Create Release
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
@@ -54,6 +66,8 @@ jobs:
         with:
           name: nightly-${{ github.run_number }}
           tag_name: nightly-${{ github.run_number }}
-          files: publish/BleTool.Cli/BleTool.Cli.exe
+          files: |
+            publish/BleTool.Cli/BleTool.Cli.exe
+            publish/BleTool.Gui/BleTool.Gui.exe
           prerelease: true
           generate_release_notes: true

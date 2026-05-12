@@ -1,0 +1,8 @@
+<Project>
+  <Target Name="StripXamlPages" BeforeTargets="MarkupCompilePass1">
+    <ItemGroup>
+      <Page Remove="@(Page)" />
+      <ApplicationDefinition Remove="@(ApplicationDefinition)" />
+    </ItemGroup>
+  </Target>
+</Project>
