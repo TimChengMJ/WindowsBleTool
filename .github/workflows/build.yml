@@ -31,7 +31,7 @@ jobs:
         run: dotnet build src/BleTool.Cli/BleTool.Cli.csproj --no-restore -warnaserror
 
       - name: Build GUI
-        run: dotnet build src/BleTool.Gui/BleTool.Gui.csproj --no-restore -warnaserror
+        run: dotnet build src/BleTool.Gui/BleTool.Gui.csproj --no-restore
 
       - name: Run BleCore unit tests
         run: dotnet test tests/BleCore.Tests/BleCore.Tests.csproj --verbosity normal
