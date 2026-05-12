@@ -1,0 +1,38 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore workloads (WinUI 3)
+        run: dotnet workload install maui-windows
+
+      - name: Restore dependencies
+        run: dotnet restore WindowsBleTool.sln
+
+      - name: Build BleCore
+        run: dotnet build src/BleCore/BleCore.csproj --no-restore
+
+      - name: Build CLI
+        run: dotnet build src/BleTool.Cli/BleTool.Cli.csproj --no-restore
+
+      - name: Build GUI (WinUI 3)
+        run: dotnet build src/BleTool.Gui/BleTool.Gui.csproj --no-restore
+
+      - name: Run tests
+        run: dotnet test tests/BleCore.Tests/BleCore.Tests.csproj --no-build --verbosity normal
