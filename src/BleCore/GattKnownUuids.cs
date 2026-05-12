@@ -4,7 +4,8 @@ public enum DataFormat { Hex, Decimal, Binary, Utf8, Base64 }
 
 public static class GattKnownUuids
 {
-    private static readonly Dictionary<string, (string Name, DataFormat SuggestedFormat)> Registry = new()
+    private static readonly Dictionary<string, (string Name, DataFormat SuggestedFormat)> Registry
+        = new(StringComparer.OrdinalIgnoreCase)
     {
         { "00001800-0000-1000-8000-00805F9B34FB", ("Generic Access", DataFormat.Hex) },
         { "00001801-0000-1000-8000-00805F9B34FB", ("Generic Attribute", DataFormat.Hex) },
@@ -29,8 +30,8 @@ public static class GattKnownUuids
     };
 
     public static string GetName(string uuid)
-        => Registry.TryGetValue(uuid.ToUpper(), out var entry) ? entry.Name : uuid;
+        => Registry.TryGetValue(uuid, out var entry) ? entry.Name : uuid;
 
     public static DataFormat GetSuggestedFormat(string uuid)
-        => Registry.TryGetValue(uuid.ToUpper(), out var entry) ? entry.SuggestedFormat : DataFormat.Hex;
+        => Registry.TryGetValue(uuid, out var entry) ? entry.SuggestedFormat : DataFormat.Hex;
 }

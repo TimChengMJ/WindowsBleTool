@@ -30,7 +30,8 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleCore\\\\Models *)"
     ]
   }
 }
