@@ -29,7 +29,8 @@
       "PowerShell(dotnet add *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src *)"
+      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src *)",
+      "Bash(git *)"
     ]
   }
 }
