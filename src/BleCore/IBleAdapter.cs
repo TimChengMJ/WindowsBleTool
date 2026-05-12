@@ -1,16 +1,6 @@
 // src/BleCore/IBleAdapter.cs
 namespace BleCore;
 
-public class DeviceFilterRule
-{
-    public FilterType Type { get; init; }
-    public FilterOperator Operator { get; init; }
-    public string Value { get; init; } = string.Empty;
-}
-
-public enum FilterType { Rssi, DeviceName, AdvertisedUuid, MacAddress, ManufacturerId, RawData, AddressType }
-public enum FilterOperator { Equal, GreaterThanOrEqual, LessThanOrEqual, Contains, NotContains, Regex }
-
 public interface IBleAdapter
 {
     event EventHandler<ScanResultEvent>? ScanResult;

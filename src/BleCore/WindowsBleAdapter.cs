@@ -47,9 +47,8 @@ public class WindowsBleAdapter : IBleAdapter, IDisposable
             AdStructures = ParseAdStructures(args.Advertisement)
         };
 
-        // TODO Task 5: Apply device filters when DeviceFilter is implemented
-        // if (_activeFilters != null && !DeviceFilter.MatchesAll(device, _activeFilters))
-        //     return;
+        if (_activeFilters != null && !DeviceFilter.MatchesAll(device, _activeFilters))
+            return;
 
         ScanResult?.Invoke(this, new ScanResultEvent { Device = device });
     }
