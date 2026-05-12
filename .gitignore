@@ -8,5 +8,8 @@ obj/
 # Superpowers
 .superpowers/
 
+# Visual Studio
+.vs/
+
 # OS
 Thumbs.db

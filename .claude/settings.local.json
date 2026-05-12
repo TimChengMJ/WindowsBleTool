@@ -27,7 +27,9 @@
       "PowerShell(& \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.241114003\\\\tools\\\\net472\\\\XamlCompiler.exe\" \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\input.json\" \"E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleTool.Gui\\\\obj\\\\Debug\\\\net9.0-windows10.0.19041.0\\\\output.json\" 2>&1)",
       "PowerShell(dotnet new install *)",
       "PowerShell(dotnet add *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src *)"
     ]
   }
 }
