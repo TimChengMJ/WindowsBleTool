@@ -62,7 +62,10 @@
       "PowerShell(gh run list --limit 1 --json status,conclusion,headBranch,url,workflowName)",
       "PowerShell(gh run *)",
       "PowerShell(Start-Sleep -Seconds 15; $run = gh run list --limit 1 --json status,conclusion,url | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.conclusion\\) $\\($run.url\\)\")",
-      "PowerShell(Start-Sleep -Seconds 10; $run = gh run list --limit 1 --json url,status | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.url\\)\")"
+      "PowerShell(Start-Sleep -Seconds 10; $run = gh run list --limit 1 --json url,status | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.url\\)\")",
+      "PowerShell(gh release list --limit 2 --json name,tagName,isPrerelease,url)",
+      "PowerShell(gh release list --limit 2 --json name,tagName,isPrerelease,createdAt)",
+      "PowerShell(gh release view nightly-6 --json tagName,name,isPrerelease,assets,publishedAt)"
     ]
   }
 }

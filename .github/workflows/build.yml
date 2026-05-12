@@ -30,8 +30,14 @@ jobs:
       - name: Build CLI
         run: dotnet build src/BleTool.Cli/BleTool.Cli.csproj --no-restore -warnaserror
 
-      - name: Run tests
+      - name: Run BleCore unit tests
         run: dotnet test tests/BleCore.Tests/BleCore.Tests.csproj --verbosity normal
+
+      - name: Build CLI integration tests
+        run: dotnet build tests/Cli.Tests/Cli.Tests.csproj --no-restore
+
+      - name: Run CLI integration tests
+        run: dotnet test tests/Cli.Tests/Cli.Tests.csproj --no-build --verbosity normal
 
       - name: Publish CLI (win-x64)
         run: dotnet publish src/BleTool.Cli/BleTool.Cli.csproj -c Release -r win-x64 -o publish/BleTool.Cli --self-contained true -p:PublishSingleFile=true
