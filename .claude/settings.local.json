@@ -31,7 +31,11 @@
       "Bash(git commit -m ' *)",
       "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src *)",
       "Bash(git *)",
-      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleCore\\\\Models *)"
+      "Bash(dir E:\\\\AI_Support\\\\AI_Project\\\\WindowsBleTool\\\\src\\\\BleCore\\\\Models *)",
+      "Bash(Get-ChildItem *)",
+      "PowerShell(git *)",
+      "PowerShell(dotnet build *)",
+      "PowerShell(dotnet test *)"
     ]
   }
 }
