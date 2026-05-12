@@ -60,7 +60,8 @@
       "PowerShell(Write-Host \"OS Version: $\\([Environment]::OSVersion\\)\"; $manifest = Get-Content \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net472\\\\XamlCompiler.exe\" -Encoding Byte -TotalCount 0; Write-Host \"File exists: $\\(Test-Path \"C:\\\\Users\\\\TimCheng\\\\.nuget\\\\packages\\\\microsoft.windowsappsdk\\\\1.6.250108002\\\\tools\\\\net472\\\\XamlCompiler.exe\"\\)\")",
       "PowerShell(Add-AppxPackage *)",
       "PowerShell(gh run list --limit 1 --json status,conclusion,headBranch,url,workflowName)",
-      "PowerShell(gh run *)"
+      "PowerShell(gh run *)",
+      "PowerShell(Start-Sleep -Seconds 15; $run = gh run list --limit 1 --json status,conclusion,url | ConvertFrom-Json; Write-Host \"$\\($run.status\\) $\\($run.conclusion\\) $\\($run.url\\)\")"
     ]
   }
 }
